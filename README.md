@@ -1,29 +1,41 @@
 # Notificator
-slackに処理の終了を通知
+Post a message on slack after the command exists.
+
+## Requirement
+- Python3.5 or more
 
 
-## 設定
+## Usage
+```
+$ notificate "echo "aaa"" --channel test
+aaa
+$ notificate "./run.py" --channel notification --user yukke42
+...
+```
+
+For more information, see `notificate --help`
+
+
+## Installation
 ```bash
-$ ./install.sh
-# zsh を利用しているなら
-$ source ~/.zsh_aliases
-# bash を利用しているなら
+$ git clone https://github.com/yukke42/Notificator
+```
+
+
+## Settings
+```
+$ cp config.ini.sample config.ini
+$ echo "alias notificate='python3 $(pwd)/notificate.py'" >> ~/.bash_aliases
 $ source ~/.bash_aliases
 ```
-`config.ini`に
-- Slack web API Toekn [参考](http://qiita.com/9en/items/23eb3762a9df2c29e812#%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3%E3%81%AE%E5%8F%96%E5%BE%97%E6%96%B9%E6%B3%95)
-- 通知するチャンネル
-- 通知相手のユーザー
+Add your [Slack Web API Token](https://api.slack.com/web) to `config.ini`
 
-を設定する
 
-## 使用方法
-エイリアスとして登録される。
-```bash
-$ notificate echo "aaaaa"
-$ notificate ./tweet.py
-```
+## Author
 
-## 注意
-設定値ファイルに間違いがあったとしてもHTTP POSTでは検知できていない。
-正しく送信できていないときは設定値を確認する。
+[@yukke_42](https://twitter.com/yukke_42)
+
+
+## License
+
+[MIT](https://github.com/yukke42/Notificator/blob/master/LICENSE)
