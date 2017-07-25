@@ -1,4 +1,2 @@
 [slack_config]
 slack_web_api = XXXXX
-channel_name = XXXXX
-user_to_be_mentioned = XXXXX
