@@ -1,5 +1,5 @@
 # Notificator
-Post a message on slack after the command exists.
+Post a message on slack after the command exits.
 
 ## Requirement
 - Python3.5 or more
